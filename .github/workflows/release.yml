@@ -23,15 +23,12 @@ jobs:
         with:
           go-version: '1.16'
 
+      - name: Clean dist directory
+        run: rm -rf dist/
+        working-directory: ./src
+
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v5
-        with:
-          # 使用 'latest' 可能会引入破坏性更新。
-          # 为了稳定性，可以考虑固定到最新的主版本，例如 '~> v2'
-          version: latest
-          workdir: ./src
-          # '--rm-dist' 已被移除，现在的默认行为就是清理 dist 目录。
-          # '--clean' 是新的等效标志，但通常是默认值，可以省略。
-          args: release --clean
+        run: goreleaser release
+        working-directory: ./src
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
