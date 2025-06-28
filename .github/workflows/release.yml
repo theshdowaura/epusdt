@@ -12,18 +12,26 @@ jobs:
   goreleaser:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # GoReleaser 需要完整的 git 历史来生成正确的变更日志
+          fetch-depth: 0
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: '1.16'
 
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v4
+        uses: goreleaser/goreleaser-action@v5
         with:
+          # 使用 'latest' 可能会引入破坏性更新。
+          # 为了稳定性，可以考虑固定到最新的主版本，例如 '~> v2'
           version: latest
           workdir: ./src
-          args: release --rm-dist
+          # '--rm-dist' 已被移除，现在的默认行为就是清理 dist 目录。
+          # '--clean' 是新的等效标志，但通常是默认值，可以省略。
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
