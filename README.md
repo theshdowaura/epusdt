@@ -4,21 +4,15 @@
 </p>
 <p align="center">
 <a href="https://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLV3-blue" alt="license GPLV3"></a>
-<a href="https://golang.org"><img src="https://img.shields.io/badge/Golang-1.16-red" alt="Go version 1.16"></a>
+<a href="https://golang.org"><img src="https://img.shields.io/badge/Golang-1.24-red" alt="Go version 1.24"></a>
 <a href="https://echo.labstack.com"><img src="https://img.shields.io/badge/Echo Framework-v4-blue" alt="Echo Framework v4"></a>
 <a href="https://github.com/tucnak/telebot"><img src="https://img.shields.io/badge/Telebot Framework-v3-lightgrey" alt="Telebot Framework-v3"></a>
-<a href="https://github.com/assimon/epusdt/releases/tag/v0.0.1"><img src="https://img.shields.io/badge/version-v0.0.1-green" alt="version v0.0.1"></a>
+<a href="https://github.com/theshdowaura/epusdt/releases/tag/v1.0.10"><img src="https://img.shields.io/badge/version-v1.0.10-green" alt="version v1.0.10"></a>
 </p>
 
-## 👮‍♂️反诈提醒
-近期有高仿作者telegram实施诈骗的行为，        
-请各位用户擦亮双眼，作者从不私聊任何人提供任何收费形式的技术支持服务！    
-项目是完全开源免费的，完全遵守`MIT开源协议`    
-没有所谓的`技术支持`，`终身技术支持`，`二次开发`等业务，也不参与任何用户的`业务运营`。    
-凡是作者私聊你的全是高仿号诈骗，请仔细核对作者唯一Telegram用户名：`linux0101`!   
 
 ## 项目简介
-`Epusdt`（全称：Easy Payment Usdt）是一个由`Go语言`编写的私有化部署`Usdt`支付中间件(`Trc20网络`)     
+`Epusdt`（全称：Easy Payment Usdt）是一个由`Go语言`编写的私有化部署`Usdt`支付中间件(`Trc20/Solana网络`)     
 站长或开发者可通过`Epusdt`提供的`http api`集成至您的任何系统，无需过多的配置，仅仅依赖`mysql`和`redis`      
 可实现USDT的在线支付和消息回调，这一切在优雅和顷刻间完成！🎉        
 私有化搭建使得无需额外的手续费和签约费用，Usdt代币直接进入您的钱包💰      
@@ -65,7 +59,7 @@ Epusdt
 - `Epusdt`交流群组[https://t.me/epusdt_group](https://t.me/epusdt_group)
 
 ## 设计实现
-`Epusdt`的实现方式与其他项目原理类似，都是通过监听`trc20`网络的api或节点，      
+`Epusdt`的实现方式与其他项目原理类似，都是通过监听`trc20` `Solana`网络的api或节点，      
 监听钱包地址`usdt`代币入账事件，通过`金额差异`和`时效性`来判定交易归属信息，     
 可参考下方`流程图`
 ```
@@ -79,24 +73,8 @@ Epusdt
 ### 流程图：
 ![Implementation principle](wiki/img/implementation_principle.jpg)
 
-## 打赏
-如果该项目对您有所帮助，希望可以请我喝一杯咖啡☕️
-```
-Usdt(trc20)打赏地址: TNEns8t9jbWENbStkQdVQtHMGpbsYsQjZK
-```
-<img src="wiki/img/usdt_thanks.jpeg" width = "300" height = "400" alt="usdt扫码打赏"/>
 
 
 
 
-## 声明
-`Epusdt`为开源的产品，仅用于学习交流使用！       
-不可用于任何违反中华人民共和国(含台湾省)或使用者所在地区法律法规的用途。           
-因为作者即本人仅完成代码的开发和开源活动(开源即任何人都可以下载使用或修改分发)，从未参与用户的任何运营和盈利活动。       
-且不知晓用户后续将程序源代码用于何种用途，故用户使用过程中所带来的任何法律责任即由用户自己承担。            
-```
-！！！Warning！！！
-项目中所涉及区块链代币均为学习用途，作者并不赞成区块链所繁衍出代币的金融属性
-亦不鼓励和支持任何"挖矿"，"炒币"，"虚拟币ICO"等非法行为
-虚拟币市场行为不受监管要求和控制，投资交易需谨慎，仅供学习区块链知识
-```
+
