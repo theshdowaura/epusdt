@@ -10,6 +10,12 @@
 <a href="https://github.com/assimon/epusdt/releases/tag/v0.0.1"><img src="https://img.shields.io/badge/version-v0.0.1-green" alt="version v0.0.1"></a>
 </p>
 
+## 👮‍♂️反诈提醒
+近期有高仿作者telegram实施诈骗的行为，        
+请各位用户擦亮双眼，作者从不私聊任何人提供任何收费形式的技术支持服务！    
+项目是完全开源免费的，完全遵守`MIT开源协议`    
+没有所谓的`技术支持`，`终身技术支持`，`二次开发`等业务，也不参与任何用户的`业务运营`。    
+凡是作者私聊你的全是高仿号诈骗，请仔细核对作者唯一Telegram用户名：`linux0101`!   
 
 ## 项目简介
 `Epusdt`（全称：Easy Payment Usdt）是一个由`Go语言`编写的私有化部署`Usdt`支付中间件(`Trc20网络`)     
@@ -39,10 +45,20 @@ Epusdt
 
 ## 教程：
 - 宝塔运行`epusdt`教程👉🏻[宝塔运行epusdt](wiki/BT_RUN.md)
+- 不好意思我有洁癖，手动运行`epusdt`教程👉🏻[手动运行epusdt](wiki/manual_RUN.md)
 - 开发者接入`epusdt`文档👉🏻[开发者接入epusdt](wiki/API.md)
+- HTML+PHP极速运行`epusdt`教程👉🏻[使用PHPAPI-for-epusdt极速接入epusdt](https://github.com/BlueSkyXN/PHPAPI-for-epusdt)
 
 ## 已适配系统插件
 - 独角数卡[插件地址](plugins/dujiaoka)
+
+## 自动化发布
+项目使用 [GoReleaser](https://goreleaser.com) 配合 GitHub Actions 进行跨平台编译。
+在仓库打上 `v*.*.*` 标签即可触发工作流，自动生成适用于各系统架构的二进制文件并发布。
+
+
+## 🔥推荐服务器 
+- （香港三网(电信/移动/联通)直连优化VPS，CN2优化网络大带宽低至35RMB/每月）[👉🏻点我直达](https://www.vkvm.info/cart?action=configureproduct&pid=146&aff=ECRPONNJ)
 
 ## 加入交流/意见反馈
 - `Epusdt`频道[https://t.me/epusdt](https://t.me/epusdt)

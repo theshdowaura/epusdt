@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'       # 推任何 v1.2.3 形式的 tag 都会触发
+
+permissions:
+  contents: write       # 用于创建 Release、上传产物
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Clean dist
+        run: rm -rf dist/
+        working-directory: ./src
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v6
+        with:
+          version: '~> v2'
+          workdir: ./src
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 👇 注入仓库 owner 供 GoReleaser 模板使用
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}

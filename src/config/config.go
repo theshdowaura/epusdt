@@ -3,7 +3,9 @@ package config
 import (
 	"fmt"
 	"github.com/spf13/viper"
+	"net/url"
 	"os"
+	"time"
 )
 
 var (
@@ -40,8 +42,8 @@ func Init() {
 		RuntimePath,
 		viper.GetString("log_save_path"))
 	MysqlDns = fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-		viper.GetString("mysql_user"),
-		viper.GetString("mysql_passwd"),
+		url.QueryEscape(viper.GetString("mysql_user")),
+		url.QueryEscape(viper.GetString("mysql_passwd")),
 		fmt.Sprintf(
 			"%s:%s",
 			viper.GetString("mysql_host"),
@@ -53,7 +55,7 @@ func Init() {
 }
 
 func GetAppVersion() string {
-	return "0.0.1"
+	return "0.0.2"
 }
 
 func GetAppName() string {
@@ -89,4 +91,9 @@ func GetOrderExpirationTime() int {
 		return 10
 	}
 	return timer
+}
+
+func GetOrderExpirationTimeDuration() time.Duration {
+	timer := GetOrderExpirationTime()
+	return time.Minute * time.Duration(timer)
 }
