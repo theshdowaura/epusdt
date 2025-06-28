@@ -3,12 +3,12 @@ module github.com/assimon/luuu
 go 1.16
 
 require (
+	github.com/gagliardetto/solana-go v1.12.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/google/btree v1.0.0 // indirect
 	github.com/google/pprof v0.0.0-20210720184732-4bb14d4b1be1 // indirect
-	github.com/google/uuid v1.3.0 // indirect
 	github.com/gookit/color v1.5.0
 	github.com/gookit/goutil v0.4.6
 	github.com/gookit/validate v1.3.1
@@ -23,7 +23,7 @@ require (
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.9.0
-	go.uber.org/zap v1.17.0
+	go.uber.org/zap v1.21.0
 	golang.org/x/sys v0.0.0-20220928140112-f11e5e49a4ec // indirect
 	golang.org/x/time v0.0.0-20220922220347-f3bd1da661af // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
