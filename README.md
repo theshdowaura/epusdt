@@ -52,6 +52,10 @@ Epusdt
 ## 已适配系统插件
 - 独角数卡[插件地址](plugins/dujiaoka)
 
+## 自动化发布
+项目使用 [GoReleaser](https://goreleaser.com) 配合 GitHub Actions 进行跨平台编译。
+在仓库打上 `v*.*.*` 标签即可触发工作流，自动生成适用于各系统架构的二进制文件并发布。
+
 
 ## 🔥推荐服务器 
 - （香港三网(电信/移动/联通)直连优化VPS，CN2优化网络大带宽低至35RMB/每月）[👉🏻点我直达](https://www.vkvm.info/cart?action=configureproduct&pid=146&aff=ECRPONNJ)
